@@ -36,6 +36,7 @@ const SignIn: React.FC = () => {
 
   const { signIn } = useAuth();
 
+
   const handleSignIn = useCallback(
     async (data: SignInFormData) => {
       try {
@@ -53,6 +54,7 @@ const SignIn: React.FC = () => {
         });
 
         await signIn({
+
           email: data.email,
           password: data.password,
         });

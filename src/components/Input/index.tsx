@@ -28,13 +28,13 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = ({ name, icon,
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
-
-    setIsFilled(!!inputValueRef.current.value);
   }, []);
 
-  const handleInputBlur = useCallback(() => {
-    setIsFocused(false);
-  }, []);
+    const handleInputBlur = useCallback(() => {
+      setIsFocused(false);
+
+      setIsFilled(!!inputValueRef.current.value);
+    }, []);
 
   useImperativeHandle(ref, () => ({
     focus() {
